@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Website</title>
+  <style>
+    /* Existing styles... */
+
+    /* New styles for responsiveness */
+    @media (max-width: 1200px) {
+      .main-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .left-content {
+        font-size: 2.5em;
+        max-width: 80%;
+        margin-top: 50px;
+        margin-left: 0;
+        text-align: center;
+      }
+      .right-content {
+        max-width: 80%;
+        margin-right: 0;
+        text-align: center;
+      }
+      .info {
+        margin-left: 0;
+      }
+      .right-content img {
+        height: auto;
+        max-width: 80%;
+      }
+      .hospital-stats {
+        margin-top: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .left-content {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header section -->
+  <header id="navbar">
+    <div class="container">
+      <div class="logo">
+        <div class="menu-bar">☰</div>
+        <img src="logo1.jpg" alt="Healthcare Logo">
+        <span class="logo-text">HealthCare</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="loginpage.html">Sign In</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+        <div class="search-bar">
+          <input type="text" placeholder="Search">
+          <button type="submit">Search</button>
+        </div>
+        <div class="profile-dropdown">
+          <img src="profilelogo.png" alt="Profile" width="40" height="40">
+          <div class="profile-dropdown-content">
+            <a href="#">Settings</a>
+            <a href="aboutforindex.html">About</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <div class="left-content">
+      Protect Your Life And Take Care Of Your Health
+    </div>
+    <div class="right-content">
+      <img id="doctor" src="doctorcutout.png" alt="Doctor Cutout">
+      <div class="hospital-stats">
+        <div class="info-bar">
+          <div class="info-item">
+            <h2>50+</h2>
+            <p>Doctors</p>
+          </div>
+          <div class="info-item">
+            <h2>5</h2>
+            <p>Clinics</p>
+          </div>
+          <div class="info-item">
+            <h2>12</h2>
+            <p>Surgery Rooms</p>
+          </div>
+          <div class="info-item">
+            <h2>100+</h2>
+            <p>Patient Capacity</p>
+          </div>
+        </div>
+      </div>
+      <button class="button" onclick="openLoginPage()">BOOK NOW</button>
+    </div>
+    <div class="info">
+      <div class="left">
+        <p><i class="icon"><img id="calendar" src="calendar.png" alt=""></i> Make An Appointment</p>
+        <small>Schedule With Your Favorite Doctor Anytime</small>
+        <p><i class="icon"><img id="user" src="user.png" alt=""></i> Find Your Best Doctor</p>
+        <small>We Provide You The Best From Best</small>
+      </div>
+      <div class="right">
+        <p><i class="icon"><img id="shield" src="shield.png" alt=""></i> Health Guarantee Forever</p>
+        <small>We Always Provide The Best Warranty For You</small>
+        <p><i class="icon"><img id="location" src="location.png" alt=""></i> Spread In Various Places</p>
+        <small>Now Clinics Are Available in Various Places</small>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code...
+    function openLoginPage() {
+      window.open('loginpage.html', '_self');
+    }
+  </script>
+</body>
+</html>

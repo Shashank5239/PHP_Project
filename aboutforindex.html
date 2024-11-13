@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - HealthCare</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #74c1cec8;
+    }
+
+    header {
+      background-color: #3c4a5ef1;
+      padding: 20px 0;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo img {
+      float: left;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .profile-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-dropdown-content {
+      display: none;
+      position: absolute;
+      background: #3c4a5ef1;
+      min-width: 160px;
+      z-index: 1;
+      right: 0;
+    }
+
+    .profile-dropdown-content a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .profile-dropdown-content a:hover {
+      background: #74c1cec8;
+      color: white;
+    }
+
+    .profile-dropdown:hover .profile-dropdown-content {
+      display: block;
+    }
+
+    .main-content {
+      padding-top: 80px; /* Account for the fixed header */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .card {
+      width: calc(25% - 20px);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card:nth-child(even) {
+      margin-right: 0;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: calc(50% - 20px);
+      }
+    }
+
+
+    .images{
+        height: 120px;
+        width: 120px;
+        margin-left: 57px;
+        /* text-align: center; */
+    }
+
+    .text{
+        text-align: center;
+    }
+
+
+
+
+    .menu-bar {
+      display: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .menu-bar:hover {
+      
+      color: #74c1cec8;
+      border-radius: 10px;
+      border: 10px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-dropdown, .search-bar {
+      margin-left: 20px;
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-right: 20px;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      /* background-color: #74c1cec8; */
+      color: #74c1cec8;
+      border-radius: 5px;
+      
+    }
+
+    .search-bar {
+      margin-left: auto;
+    }
+
+    .search-bar input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-bar button {
+      padding: 8px 15px;
+      
+      background-color: #74c1cec8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      
+      background-color: #74c1cec8;
+    }
+
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo-text {
+        margin-right: 0; 
+      }
+
+      .search-bar {
+        margin-top: 10px;
+        margin-left: 0;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .nav-links li {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .menu-bar {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+      }
+
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <header id="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="logo1.jpg" alt="Healthcare Logo">
+        <span class="logo-text">HealthCare</span>
+      </div>
+      <nav>
+
+        <ul class="nav-links">
+            <li><a href="login.php">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+  
+          </ul>
+         
+          <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button type="submit">Search</button>
+          </div>
+
+
+        <div class="profile-dropdown">
+          <img src="profilelogo.png" alt="Profile" width="40" height="40">
+          <div class="profile-dropdown-content">
+            
+            <a href="#">Book Appointment</a>
+            <a href="#">Reports</a>
+            <a href="#">Diagnosis Center</a>
+            <a href="#">Medicines</a>      
+            <a href="healthtips.html">Health Tips</a>
+            <a href="#">Settings</a>  
+            <a href="#">Contact</a>
+            <a href="#">Logout</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <h1>Our Facilities</h1>
+    <div class="card-container">
+      <div class="card">
+        <h3 class="text">Doctors Avaibility</h3>
+        <img class="images" src="doctors.jpg" alt="Doctors">
+        <p>We have a total of 50+ doctors available for our patients, ensuring cheaper and quality healthcare services.</p>
+      </div>
+      <div class="card">
+        <h3 class="text">Patient Capacity</h3>
+        <img class="images" src="patientcapacity.jpg" alt="Patient Capacity">
+        <p>With a patient capacity of 100, we strive to accommodate and care for all individuals seeking medical attention.</p>
+      </div>
+      <div class="card">
+        <h3 class="text">Clinics</h3>
+        <img class="images" src="clinics.jpg" alt="Clinics">
+        <p>HealthCare operates across 5 branches, making healthcare accessible to communities across the region.</p>
+      </div>
+      <div class="card">
+        <h3 class="text">Emergency Services</h3>
+        <img class="images" src="emergency.jpg" alt="Emergency Wards">
+        <p>Our 24/7 emergency wards are equipped with state-of-the-art facilities to provide immediate medical assistance in critical situations.</p>
+      </div>
+    </div>
+    <div class="main-content">
+    <h1>Our Top Doctors</h1>
+    </div>
+    <div class="card-container">
+      <div class="card">
+        <h3 class="text">Dr. Kedar Nath</h3>
+        <img class="images" src="doctor1.jpg" alt="Dr. John Doe">
+        <p>Chief Medical Officer</p>
+        <p>Dr. Kedar Nath, our Chief Medical Officer, leads with expertise and compassion. With a wealth of experience, he ensures top-notch healthcare services and patient-centered care.</p>
+      
+      </div>
+      <div class="card">
+        <h3 class="text">Dr. Vishnu Kant</h3>
+        <img class="images" src="doctor2.jpg" alt="Dr. Jane Smith">
+        <p>Head Surgeon</p>
+        <p>Dr. Vishnu Kant, our Head Surgeon, combines skill and empathy to provide exceptional surgical care. With precision and dedication, he ensures the highest standards of treatment and patient satisfaction.</p>
+      
+      </div>
+      <div class="card">
+        <h3 class="text">Dr. Anurag Ranjan</h3>
+        <img class="images" src="doctor3.jpg" alt="Dr. Michael Johnson">
+        <p>Director of Cardiology</p>
+        <p>
+            Dr. Anurag Ranjan, our Director of Cardiology, brings expertise and compassion to heart care. With cutting-edge knowledge and a patient-centered approach, he leads in diagnosing and treating cardiac conditions effectively.</p>
+      
+      </div>
+      <div class="card">
+        <h3 class="text">Dr. Abhishek Shukla</h3>
+        <img class="images" src="doctor4.jpg" alt="Dr. Emily Williams">
+        <p>Chief Pediatrician</p>
+        <p>Dr. Abhishek Shukla, our Chief Pediatrician, nurtures young lives with expertise and warmth. His dedication to children's health ensures comprehensive care, blending medical knowledge with empathy for little patients and their families.</p>
+      
+      </div>
+    </div>
+  </div>
+</body>
+</html>

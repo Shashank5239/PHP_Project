@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Services</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #74c1cec8;
+    }
+
+    header {
+      background-color: #3c4a5ef1;
+      padding: 20px 0;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo img {
+      float: left;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .profile-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-dropdown-content {
+      display: none;
+      position: absolute;
+      background: #3c4a5ef1;
+      min-width: 160px;
+      z-index: 1;
+      right: 0;
+    }
+
+    .profile-dropdown-content a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .profile-dropdown-content a:hover {
+      background: #74c1cec8;
+      color: white;
+    }
+
+    .profile-dropdown:hover .profile-dropdown-content {
+      display: block;
+    }
+
+    .main-content {
+      padding-top: 80px; /* Account for the fixed header */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .service-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .service {
+      width: calc(33.33% - 20px);
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 20px; /* Curved border radius */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease; /* Add transition for smooth effect */
+    }
+
+    .service h2 {
+      color: #3c4a5ef1;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #333;
+    }
+
+    /* Add hovering effect */
+    .service:hover {
+      transform: translateY(-5px); /* Move card slightly upwards */
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add depth with larger shadow */
+    }
+
+    @media (max-width: 768px) {
+      .service {
+        width: calc(50% - 20px);
+      }
+    }
+
+
+
+
+    .menu-bar {
+      display: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .menu-bar:hover {
+      
+      color: #74c1cec8;
+      border-radius: 10px;
+      border: 10px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-dropdown, .search-bar {
+      margin-left: 20px;
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-right: 20px;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      /* background-color: #74c1cec8; */
+      color: #74c1cec8;
+      border-radius: 5px;
+      
+    }
+
+    .search-bar {
+      margin-left: auto;
+    }
+
+    .search-bar input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-bar button {
+      padding: 8px 15px;
+      
+      background-color: #74c1cec8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      
+      background-color: #74c1cec8;
+    }
+
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo-text {
+        margin-right: 0; 
+      }
+
+      .search-bar {
+        margin-top: 10px;
+        margin-left: 0;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .nav-links li {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .menu-bar {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+  <header id="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="logo1.jpg" alt="Healthcare Logo">
+        <span class="logo-text">HealthCare</span>
+      </div>
+      <nav>
+
+
+        <ul class="nav-links">
+          <li><a href="welcome.php">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="about.html">About Us</a></li>
+
+        </ul>
+       
+        <div class="search-bar">
+          <input type="text" placeholder="Search">
+          <button type="submit">Search</button>
+        </div>
+
+
+        <div class="profile-dropdown">
+          <img src="profilelogo.png" alt="Profile" width="40" height="40">
+          <div class="profile-dropdown-content">
+            
+            <a href="book_appointment.php">Book Appointment</a>
+            <a href="reports.html">Reports</a>
+            <a href="diagnosis.html">Diagnosis Center</a>
+            <a href="#">Medicines</a>      
+            <a href="healthtips.html">Health Tips</a>  
+            <a href="#">Settings</a>
+            <a href="#">Contact</a>
+            <a href="login.php">Logout</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <h1>Facilities That We Provide</h1>
+    <div class="service-container">
+      <div class="service">
+        <h2>Report Storage</h2>
+        <p>Store and access your medical reports securely online. With our advanced encryption technology, your data is safe and easily accessible whenever you need it.</p>
+      </div>
+      <div class="service">
+        <h2>Medicine Ordering</h2>
+        <p>Order prescribed medicines online with doorstep delivery. Our user-friendly platform makes ordering medications convenient, ensuring you receive the right treatment on time.</p>
+      </div>
+      <div class="service">
+        <h2>Video Call with Doctor</h2>
+        <p>Connect with healthcare professionals via video call for consultation. Experience personalized medical advice and treatment recommendations from the comfort of your home.</p>
+      </div>
+      <div class="service">
+        <h2>Audio Call with Doctor</h2>
+        <p>Speak with doctors over the phone for medical advice and assistance. Whether you have urgent questions or need follow-up care, our team is here to support you.</p>
+      </div>
+      <div class="service">
+        <h2>Diagnosis Center</h2>
+        <p>Find information about our diagnosis centers, locations, and services. Discover state-of-the-art facilities equipped with advanced technology for accurate and timely diagnoses.</p>
+      </div>
+      <div class="service">
+        <h2>Health Tips</h2>
+        <p>Explore valuable health tips and advice to improve your well-being. From nutrition guidance to fitness routines, empower yourself to lead a healthier and happier life.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

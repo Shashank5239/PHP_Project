@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Tips</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #74c1cec8;
+    }
+
+    header {
+      background-color: #3c4a5e;
+      padding: 20px 0;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo img {
+      float: left;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .profile-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-dropdown-content {
+      display: none;
+      position: absolute;
+      background: #3c4a5e;
+      min-width: 160px;
+      z-index: 1;
+      right: 0;
+    }
+
+    .profile-dropdown-content a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .profile-dropdown-content a:hover {
+      background: #74c1ce;
+      color: white;
+    }
+
+    .profile-dropdown:hover .profile-dropdown-content {
+      display: block;
+    }
+
+    .main-content {
+      padding-top: 80px; /* Account for the fixed header */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #3c4a5e;
+    }
+
+    .health-tips-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 60px;
+    }
+
+    .health-tip-card {
+      width: calc(33.33% - 20px);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .health-tip-card h2 {
+      color: #3c4a5e;
+      margin-bottom: 10px;
+    }
+
+    .health-tip-card p {
+      color: #333;
+    }
+
+    .learn-more-button {
+      background-color: #3c4a5e;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .learn-more-button:hover {
+      background-color: #74c1ce;
+    }
+
+    .health-tip-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .health-tip-card {
+        width: calc(50% - 20px);
+      }
+    }
+
+
+
+
+    .menu-bar {
+      display: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .menu-bar:hover {
+      
+      color: #74c1cec8;
+      border-radius: 10px;
+      border: 10px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-dropdown, .search-bar {
+      margin-left: 20px;
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-right: 20px;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      /* background-color: #74c1cec8; */
+      color: #74c1cec8;
+      border-radius: 5px;
+      
+    }
+
+    .search-bar {
+      margin-left: auto;
+    }
+
+    .search-bar input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-bar button {
+      padding: 8px 15px;
+      
+      background-color: #74c1cec8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      
+      background-color: #74c1cec8;
+    }
+
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo-text {
+        margin-right: 0; 
+      }
+
+      .search-bar {
+        margin-top: 10px;
+        margin-left: 0;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .nav-links li {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .menu-bar {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+      }
+
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <header id="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="logo1.jpg" alt="Healthcare Logo">
+        <span class="logo-text">HealthCare</span>
+      </div>
+      <nav>
+
+
+        <ul class="nav-links">
+          <li><a href="welcome.php">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="about.html">About Us</a></li>
+
+        </ul>
+       
+        <div class="search-bar">
+          <input type="text" placeholder="Search">
+          <button type="submit">Search</button>
+        </div>
+
+
+
+
+        <div class="profile-dropdown">
+          <img src="profilelogo.png" alt="Profile" width="40" height="40">
+          <div class="profile-dropdown-content">
+            
+            <a href="book_appointment.php">Book Appointment</a>
+            <a href="reports.html">Reports</a>
+            <a href="diagnosis.html">Diagnosis Center</a>
+            <a href="#">Medicines</a>      
+            <a href="healthtips.html">Health Tips</a>  
+            <a href="#">Settings</a>
+            <a href="#">Contact</a>
+            <a href="login.php">Logout</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <h1 style="font-size: 40px;">Health Tips</h1>
+    <div class="health-tips-container">
+      <div class="health-tip-card">
+        <h2>Healthy Eating</h2>
+        <p>Eat a balanced diet rich in fruits, vegetables, lean proteins, and whole grains for optimal health and energy levels.</p>
+        <button class="learn-more-button">Learn More</button>
+      </div>
+      <div class="health-tip-card">
+        <h2>Regular Exercise</h2>
+        <p>Stay active with regular exercise such as walking, jogging, or yoga to maintain a healthy weight and reduce stress.</p>
+        <button class="learn-more-button">Learn More</button>
+      </div>
+      <div class="health-tip-card">
+        <h2>Stay Hydrated</h2>
+        <p>Drink plenty of water throughout the day to stay hydrated, aid digestion, and promote overall health and well-being.</p>
+        <button class="learn-more-button">Learn More</button>
+      </div>
+      <div class="health-tip-card">
+        <h2>Mental Health</h2>
+        <p>Practice mindfulness, meditation, or deep breathing exercises to reduce stress and maintain positive mental health.</p>
+        <button class="learn-more-button">Learn More</button>
+      </div>
+      <div class="health-tip-card">
+        <h2>Quality Sleep</h2>
+        <p>Ensure you get enough restorative sleep each night to support physical and mental health, productivity, and overall well-being.</p>
+        <button class="learn-more-button">Learn More</button>
+      </div>
+      <div class="health-tip-card">
+        <h2>Healthy Habits</h2>
+        <p>Avoid smoking, limit alcohol consumption, and practice good hygiene habits to reduce the risk of illness and promote longevity.</p>
+        <button class="learn-more-button">Learn More</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
